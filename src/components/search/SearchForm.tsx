@@ -1,7 +1,12 @@
 import { useState } from 'react';
 import { Alert, Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
+import { Movies } from '../../model/Movies';
 
-function SearchForm() {
+interface SearchFormProps {
+  movies: Movies;
+}
+
+const SearchForm = ({ movies }: SearchFormProps) => {
   const feedback = false;
   const isFormValidated = false;
   const queryError = '';
@@ -9,8 +14,9 @@ function SearchForm() {
 
   const [queryText, setQueryText] = useState<string>('');
 
-  const onSearch = () => {
-    console.log(process.env.REACT_APP_API_TOKEN);
+  const onSearch = async () => {
+    await movies.searchMovies(queryText);
+    console.log(movies.movies);
   };
 
   const onQueryChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -57,6 +63,6 @@ function SearchForm() {
       </Row>
     </Container>
   );
-}
+};
 
 export default SearchForm;

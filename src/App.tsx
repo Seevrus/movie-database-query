@@ -1,7 +1,10 @@
 import SearchForm from './components/search/SearchForm';
+import { Movies } from './model/Movies';
 
-function App() {
-  return <SearchForm />;
-}
+const App = () => {
+  const movies = new Movies();
+
+  return <SearchForm movies={movies} />;
+};
 
 export default App;
