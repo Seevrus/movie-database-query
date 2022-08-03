@@ -1,15 +1,7 @@
 import { useState } from 'react';
-import {
-  Alert,
-  Button,
-  Card,
-  Col,
-  Container,
-  Form,
-  Row,
-} from 'react-bootstrap';
+import { Alert, Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
 
-const SearchForm = () => {
+function SearchForm() {
   const feedback = false;
   const isFormValidated = false;
   const queryError = '';
@@ -19,7 +11,7 @@ const SearchForm = () => {
 
   const onSearch = () => {
     console.log('Searching...');
-  }
+  };
 
   const onQueryChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const taxNumberInput = e.target.value;
@@ -47,9 +39,9 @@ const SearchForm = () => {
                         value={queryText}
                       />
                       {feedback && (
-                      <Form.Control.Feedback type="invalid">
-                        {queryError}
-                      </Form.Control.Feedback>
+                        <Form.Control.Feedback type="invalid">
+                          {queryError}
+                        </Form.Control.Feedback>
                       )}
                     </Form.Group>
                   </Col>
@@ -58,15 +50,13 @@ const SearchForm = () => {
                   Keresés
                 </Button>
               </Form>
-              {searchError && (
-                <Alert variant="danger">{searchError}</Alert>
-              )}
+              {searchError && <Alert variant="danger">{searchError}</Alert>}
             </Card.Body>
           </Card>
         </Col>
       </Row>
     </Container>
   );
-};
+}
 
 export default SearchForm;
