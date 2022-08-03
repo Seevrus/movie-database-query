@@ -10,7 +10,7 @@ function SearchForm() {
   const [queryText, setQueryText] = useState<string>('');
 
   const onSearch = () => {
-    console.log('Searching...');
+    console.log(process.env.REACT_APP_API_TOKEN);
   };
 
   const onQueryChange = (e: React.ChangeEvent<HTMLInputElement>) => {
