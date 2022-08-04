@@ -1,7 +1,8 @@
-import { useState } from 'react';
-import { Alert, Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
+import { useEffect, useRef, useState } from 'react';
+import { Alert, Card, Col, Container, Form, Row } from 'react-bootstrap';
 import { Movie } from '../../model/Movie';
 import { MovieService } from '../../model/MovieService';
+import debounce from '../../utils/debounce';
 
 interface SearchFormProps {
   setMovies: React.Dispatch<React.SetStateAction<Movie[]>>;
@@ -13,17 +14,23 @@ const SearchForm = ({ setMovies }: SearchFormProps) => {
   const queryError = '';
   const searchError = '';
 
+  const MIN_QUERY_LENGTH = 3;
   const [queryText, setQueryText] = useState<string>('');
 
-  const onSearch = async () => {
-    const movies = await MovieService.searchMovies(queryText);
-    setMovies(movies);
+  const onQueryChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setQueryText(e.target.value);
   };
 
-  const onQueryChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const taxNumberInput = e.target.value;
-    setQueryText(taxNumberInput);
-  };
+  const debouncedSearch = useRef(debounce(async (query: string) => {
+    if (query.length >= MIN_QUERY_LENGTH) {
+      const movies = await MovieService.searchMovies(query);
+      setMovies(movies);
+    }
+  }));
+
+  useEffect(() => {
+    debouncedSearch.current(queryText);
+  }, [queryText]);
 
   return (
     <Container fluid>
@@ -44,6 +51,7 @@ const SearchForm = ({ setMovies }: SearchFormProps) => {
                         onChange={onQueryChange}
                         required
                         value={queryText}
+                        placeholder="Minimum három karakter..."
                       />
                       {feedback && (
                         <Form.Control.Feedback type="invalid">
@@ -53,9 +61,6 @@ const SearchForm = ({ setMovies }: SearchFormProps) => {
                     </Form.Group>
                   </Col>
                 </Row>
-                <Button onClick={onSearch} variant="primary">
-                  Keresés
-                </Button>
               </Form>
               {searchError && <Alert variant="danger">{searchError}</Alert>}
             </Card.Body>

@@ -15,7 +15,7 @@ export type MovieResult = {
   vote_average?: number;
 };
 
-export type SearchMoviesT = {
+export type SearchMoviesResponseT = {
   page?: number;
   results?: MovieResult[];
   total_results?: number;
