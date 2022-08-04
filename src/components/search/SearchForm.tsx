@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { Alert, Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
-import { Movies } from '../../model/Movies';
+import { Movie } from '../../model/Movie';
+import { MovieService } from '../../model/MovieService';
 
 interface SearchFormProps {
-  movies: Movies;
+  setMovies: React.Dispatch<React.SetStateAction<Movie[]>>;
 }
 
-const SearchForm = ({ movies }: SearchFormProps) => {
+const SearchForm = ({ setMovies }: SearchFormProps) => {
   const feedback = false;
   const isFormValidated = false;
   const queryError = '';
@@ -15,8 +16,8 @@ const SearchForm = ({ movies }: SearchFormProps) => {
   const [queryText, setQueryText] = useState<string>('');
 
   const onSearch = async () => {
-    await movies.searchMovies(queryText);
-    console.log(movies.movies);
+    const movies = await MovieService.searchMovies(queryText);
+    setMovies(movies);
   };
 
   const onQueryChange = (e: React.ChangeEvent<HTMLInputElement>) => {

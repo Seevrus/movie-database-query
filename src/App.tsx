@@ -1,10 +1,12 @@
+import { useState } from 'react';
 import SearchForm from './components/search/SearchForm';
-import { Movies } from './model/Movies';
+import { Movie } from './model/Movie';
 
 const App = () => {
-  const movies = new Movies();
+  const [movies, setMovies] = useState<Movie[]>([]);
+  console.log(movies);
 
-  return <SearchForm movies={movies} />;
+  return <SearchForm setMovies={setMovies} />;
 };
 
 export default App;
