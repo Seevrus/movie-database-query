@@ -11,6 +11,8 @@ import { useContext } from 'react';
 import { ConfigurationContext } from '../../App';
 import { Movie } from '../../model/Movie';
 
+import './movie-card.css';
+
 interface MovieCardProps {
   movie: Movie;
 }
@@ -20,12 +22,12 @@ export const MovieCard = ({ movie }: MovieCardProps) => {
   const imgUrl = configuration.baseUrl + '/' + configuration.size + '/' + movie.posterPath;
 
   return (
-    <MDBCard style={{ maxWidth: '1440px' }}>
+    <MDBCard style={{ maxWidth: '1280px' }}>
       <MDBRow className='g-0'>
-        <MDBCol md='4'>
+        <MDBCol md='3'>
           <MDBCardImage src={imgUrl} alt={`Poster of ${movie.title}`} fluid />
         </MDBCol>
-        <MDBCol md='8'>
+        <MDBCol md='9'>
           <MDBCardBody>
             <MDBCardTitle>{movie.title}</MDBCardTitle>
             <MDBCardText>

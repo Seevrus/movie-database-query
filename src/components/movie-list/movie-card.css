@@ -1,0 +1,12 @@
+.card {
+  padding: 12px;
+  margin: 12px 0;
+}
+
+.card-body {
+  text-align: justify;
+}
+
+.col-md-3 {
+  text-align: center;
+}

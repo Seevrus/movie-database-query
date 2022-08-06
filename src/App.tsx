@@ -22,7 +22,8 @@ const App = () => {
       <ConfigurationContext.Provider value={configuration}>
         <MovieList movies={movies} />
       </ConfigurationContext.Provider>
-    </Container>);
+    </Container>
+  );
 };
 
 export default App;
