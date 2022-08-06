@@ -6,6 +6,23 @@ export const defaultConfiguration = {
   size: 'w185',
 };
 
+const findAppropiatePosterSize = (
+  posterSizes: ApiConfigurationResponseT['images']['poster_sizes'],
+) => {
+  if (posterSizes.find((sizeStr) => sizeStr === defaultConfiguration.size)) {
+    return defaultConfiguration.size;
+  }
+
+  const MIN_SIZE = 150;
+  const MAX_SIZE = 200;
+  return posterSizes
+    .filter((sizeStr) => {
+      const size = +sizeStr.substring(1);
+      return size >= MIN_SIZE && size < MAX_SIZE;
+    })
+    .shift();
+};
+
 export class ConfigurationService {
   static async getConfiguration(): Promise<ApiConfigurationT> {
     return jsonFetch<ApiConfigurationResponseT>('https://api.themoviedb.org/3/configuration', {
@@ -15,7 +32,7 @@ export class ConfigurationService {
     })
       .then(response => ({
         baseUrl: response.images.secure_base_url ?? response.images.base_url,
-        size: 'w185',
+        size: findAppropiatePosterSize(response.images.poster_sizes),
       }))
       .catch(() => defaultConfiguration);
   }

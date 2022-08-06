@@ -13,5 +13,5 @@ export type ApiConfigurationResponseT = {
 
 export type ApiConfigurationT = {
   baseUrl: string;
-  size: string;
+  size?: string;
 };

@@ -19,7 +19,10 @@ interface MovieCardProps {
 
 export const MovieCard = ({ movie }: MovieCardProps) => {
   const configuration = useContext(ConfigurationContext);
-  const imgUrl = configuration.baseUrl + '/' + configuration.size + '/' + movie.posterPath;
+  const hasImage = !!configuration.size;
+  const imgUrl = hasImage
+    ? configuration.baseUrl + '/' + configuration.size + '/' + movie.posterPath
+    : '';
 
   return (
     <MDBCard style={{ maxWidth: '1280px' }}>
