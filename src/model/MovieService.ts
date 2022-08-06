@@ -9,7 +9,9 @@ export class MovieService {
         Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN}`,
       },
     }).then((response) => {
-      return (response.results ?? []).map(movieResult => new Movie(movieResult));
+      return (response.results ?? [])
+        .map(movieResult => new Movie(movieResult))
+        .sort((m1, m2) => (m2.voteAverage || 0) - (m1.voteAverage || 0));
     });
   }
 }
