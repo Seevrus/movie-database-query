@@ -10,17 +10,24 @@ export const ConfigurationContext = createContext<ApiConfigurationT>(defaultConf
 
 const App = () => {
   const [configuration, setConfiguration] = useState<ApiConfigurationT>(defaultConfiguration);
+  const [isComponentLoading, setIsComponentLoading] = useState<boolean>(false);
   const [movies, setMovies] = useState<Movie[]>([]);
 
   useEffect(() => {
-    ConfigurationService.getConfiguration().then(setConfiguration);
+    setIsComponentLoading(true);
+    ConfigurationService.getConfiguration().then(
+      (configurationResponse) => {
+        setConfiguration(configurationResponse);
+        setIsComponentLoading(false);
+      },
+    );
   }, []);
 
   return (
     <Container fluid>
-      <SearchForm setMovies={setMovies} />
+      <SearchForm setLoading={setIsComponentLoading} setMovies={setMovies} />
       <ConfigurationContext.Provider value={configuration}>
-        <MovieList movies={movies} />
+        <MovieList isLoading={isComponentLoading} movies={movies} />
       </ConfigurationContext.Provider>
     </Container>
   );

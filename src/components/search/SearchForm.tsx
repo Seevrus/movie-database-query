@@ -5,10 +5,11 @@ import { MovieService } from '../../model/MovieService';
 import debounce from '../../utils/debounce';
 
 interface SearchFormProps {
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
   setMovies: React.Dispatch<React.SetStateAction<Movie[]>>;
 }
 
-const SearchForm = ({ setMovies }: SearchFormProps) => {
+const SearchForm = ({ setLoading, setMovies }: SearchFormProps) => {
   const feedback = false;
   const isFormValidated = false;
   const queryError = '';
@@ -23,8 +24,10 @@ const SearchForm = ({ setMovies }: SearchFormProps) => {
 
   const debouncedSearch = useRef(debounce(async (query: string) => {
     if (query.length >= MIN_QUERY_LENGTH) {
+      setLoading(true);
       const movies = await MovieService.searchMovies(query);
       setMovies(movies);
+      setLoading(false);
     }
   }));
 
