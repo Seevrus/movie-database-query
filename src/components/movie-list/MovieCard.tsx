@@ -8,7 +8,8 @@ import {
   MDBCol,
 } from 'mdb-react-ui-kit';
 import { useContext } from 'react';
-import { ConfigurationContext } from '../../App';
+import { Button } from 'react-bootstrap';
+import { MovieListContext } from './MovieListContext';
 import { Movie } from '../../model/Movie';
 
 import './movie-card.css';
@@ -18,11 +19,26 @@ interface MovieCardProps {
 }
 
 export const MovieCard = ({ movie }: MovieCardProps) => {
-  const configuration = useContext(ConfigurationContext);
+  const { configuration, favoriteMovies, setFavoriteMovies } = useContext(MovieListContext);
   const hasImage = !!configuration.size;
   const imgUrl = hasImage
     ? configuration.baseUrl + '/' + configuration.size + '/' + movie.posterPath
     : '';
+
+  const addMovieToFavorites = (m: Movie) => {
+    setFavoriteMovies?.([
+      ...favoriteMovies,
+      m,
+    ]);
+  };
+
+  const isMovieFavorite = (m: Movie) => {
+    return favoriteMovies.findIndex((m2) => m.id === m2.id) !== -1;
+  };
+
+  const removeFromFavorites = (m: Movie) => {
+    setFavoriteMovies?.(favoriteMovies.filter((m2) => m.id !== m2.id));
+  };
 
   return (
     <MDBCard style={{ maxWidth: '1280px' }}>
@@ -39,6 +55,15 @@ export const MovieCard = ({ movie }: MovieCardProps) => {
             <MDBCardText>
               <small className='text-muted'>{movie.releaseDate}</small>
             </MDBCardText>
+            {isMovieFavorite(movie)
+              ? <Button
+                  onClick={() => removeFromFavorites(movie)}
+                >Eltávolítás a kedvencek közül</Button>
+              : <Button
+                  variant="light"
+                  onClick={() => addMovieToFavorites(movie)}
+                >Kedvencek közé</Button>
+            }
           </MDBCardBody>
         </MDBCol>
       </MDBRow>

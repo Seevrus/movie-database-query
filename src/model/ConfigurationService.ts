@@ -1,7 +1,7 @@
 import { ApiConfigurationResponseT, ApiConfigurationT } from '../types/api-configuration';
 import { jsonFetch } from './utils';
 
-export const defaultConfiguration = {
+export const defaultApiConfiguration = {
   baseUrl: 'https://image.tmdb.org/t/p/',
   size: 'w185',
 };
@@ -9,8 +9,8 @@ export const defaultConfiguration = {
 const findAppropiatePosterSize = (
   posterSizes: ApiConfigurationResponseT['images']['poster_sizes'],
 ) => {
-  if (posterSizes.find((sizeStr) => sizeStr === defaultConfiguration.size)) {
-    return defaultConfiguration.size;
+  if (posterSizes.find((sizeStr) => sizeStr === defaultApiConfiguration.size)) {
+    return defaultApiConfiguration.size;
   }
 
   const MIN_SIZE = 150;
@@ -34,6 +34,6 @@ export class ConfigurationService {
         baseUrl: response.images.secure_base_url ?? response.images.base_url,
         size: findAppropiatePosterSize(response.images.poster_sizes),
       }))
-      .catch(() => defaultConfiguration);
+      .catch(() => defaultApiConfiguration);
   }
 }

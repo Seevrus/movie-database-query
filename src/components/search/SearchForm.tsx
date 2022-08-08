@@ -39,8 +39,7 @@ const SearchForm = ({
         setLoading(true);
         const movieSearchResult = await MovieService.searchMovies(query, page);
         setMovies({
-          query: movieSearchResult.query,
-          pages: movieSearchResult.pages,
+          ...movieSearchResult,
           movies: new Map(movieState.movies).set(page, movieSearchResult.movies),
         });
         setActivePage(page);
