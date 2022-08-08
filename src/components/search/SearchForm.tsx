@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
 import { Alert, Card, Col, Container, Form, Row } from 'react-bootstrap';
-import { Movie } from '../../model/Movie';
 import { MovieService } from '../../model/MovieService';
 import { MoviePagesT } from '../../types/movie-pages';
 import debounce from '../../utils/debounce';
@@ -9,7 +8,6 @@ interface SearchFormProps {
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
   movies: MoviePagesT;
   setMovies: React.Dispatch<React.SetStateAction<MoviePagesT>>;
-  setCurrentMovies: React.Dispatch<React.SetStateAction<Movie[]>>;
   activePage: number;
   setActivePage: React.Dispatch<React.SetStateAction<number>>;
   setNumberOfPages: React.Dispatch<React.SetStateAction<number>>;
@@ -19,7 +17,6 @@ const SearchForm = ({
   setLoading,
   movies,
   setMovies,
-  setCurrentMovies,
   activePage,
   setActivePage,
   setNumberOfPages,
@@ -58,9 +55,8 @@ const SearchForm = ({
       if (movies.query !== queryText || !movies.movies.has(activePage)) {
         debouncedSearch.current(queryText, activePage, movies);
       }
-      setCurrentMovies(movies.movies.get(activePage) ?? []);
     },
-    [activePage, movies, setCurrentMovies, queryText],
+    [activePage, movies, queryText],
   );
 
   return (

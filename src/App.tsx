@@ -5,7 +5,6 @@ import { MovieList } from './components/movie-list/MovieList';
 import ResultsPagination from './components/pagination/ResultsPagination';
 import SearchForm from './components/search/SearchForm';
 import { ConfigurationService, defaultConfiguration } from './model/ConfigurationService';
-import { Movie } from './model/Movie';
 import { ApiConfigurationT } from './types/api-configuration';
 import { defaultMoviePagesState, MoviePagesT } from './types/movie-pages';
 
@@ -17,11 +16,11 @@ const App = () => {
 
   const [apiConfiguration, setApiConfiguration] = useState<ApiConfigurationT>(defaultConfiguration);
 
-  const [movies, setMovies] = useState<MoviePagesT>(defaultMoviePagesState);
-  const [currentMovies, setCurrentMovies] = useState<Movie[]>([]);
-
   const [activePage, setActivePage] = useState<number>(1);
   const [numberOfPages, setNumberOfPages] = useState<number>(1);
+
+  const [movies, setMovies] = useState<MoviePagesT>(defaultMoviePagesState);
+  const currentMovies = movies.movies.get(activePage) ?? [];
 
   useEffect(() => {
     ConfigurationService.getConfiguration().then(
@@ -36,14 +35,12 @@ const App = () => {
     return <Loading />;
   }
 
-  console.log(currentMovies);
   return (
     <Container fluid>
       <SearchForm 
         setLoading={setAreMoviesLoading}
         movies={movies}
         setMovies={setMovies}
-        setCurrentMovies={setCurrentMovies}
         activePage={activePage}
         setActivePage={setActivePage}
         setNumberOfPages={setNumberOfPages}
