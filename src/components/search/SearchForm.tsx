@@ -2,14 +2,28 @@ import { useEffect, useRef, useState } from 'react';
 import { Alert, Card, Col, Container, Form, Row } from 'react-bootstrap';
 import { Movie } from '../../model/Movie';
 import { MovieService } from '../../model/MovieService';
+import { MoviePagesT } from '../../types/movie-pages';
 import debounce from '../../utils/debounce';
 
 interface SearchFormProps {
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
-  setMovies: React.Dispatch<React.SetStateAction<Movie[]>>;
+  movies: MoviePagesT;
+  setMovies: React.Dispatch<React.SetStateAction<MoviePagesT>>;
+  setCurrentMovies: React.Dispatch<React.SetStateAction<Movie[]>>;
+  activePage: number;
+  setActivePage: React.Dispatch<React.SetStateAction<number>>;
+  setNumberOfPages: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const SearchForm = ({ setLoading, setMovies }: SearchFormProps) => {
+const SearchForm = ({
+  setLoading,
+  movies,
+  setMovies,
+  setCurrentMovies,
+  activePage,
+  setActivePage,
+  setNumberOfPages,
+}: SearchFormProps) => {
   const feedback = false;
   const isFormValidated = false;
   const queryError = '';
@@ -22,18 +36,32 @@ const SearchForm = ({ setLoading, setMovies }: SearchFormProps) => {
     setQueryText(e.target.value);
   };
 
-  const debouncedSearch = useRef(debounce(async (query: string) => {
-    if (query.length >= MIN_QUERY_LENGTH) {
-      setLoading(true);
-      const movies = await MovieService.searchMovies(query);
-      setMovies(movies);
-      setLoading(false);
-    }
-  }));
+  const debouncedSearch = useRef(debounce(
+    async (query: string, page: number, movieState: MoviePagesT) => {
+      if (query.length >= MIN_QUERY_LENGTH) {
+        setLoading(true);
+        const movieSearchResult = await MovieService.searchMovies(query, page);
+        setMovies({
+          query: movieSearchResult.query,
+          pages: movieSearchResult.pages,
+          movies: new Map(movieState.movies).set(page, movieSearchResult.movies),
+        });
+        setActivePage(page);
+        setNumberOfPages(movieSearchResult.pages);
+        setLoading(false);
+      }
+    },
+  ));
 
-  useEffect(() => {
-    debouncedSearch.current(queryText);
-  }, [queryText]);
+  useEffect(
+    () => {
+      if (movies.query !== queryText || !movies.movies.has(activePage)) {
+        debouncedSearch.current(queryText, activePage, movies);
+      }
+      setCurrentMovies(movies.movies.get(activePage) ?? []);
+    },
+    [activePage, movies, setCurrentMovies, queryText],
+  );
 
   return (
     <Container fluid>

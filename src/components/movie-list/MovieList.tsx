@@ -5,10 +5,12 @@ import { MovieCard } from './MovieCard';
 
 interface MovieListProps {
   isLoading: boolean;
-  movies: Movie[];
+  movies?: Movie[];
 }
 
 export const MovieList = ({ isLoading, movies }: MovieListProps) => {
+  if (!movies) return <></>;
+
   if (isLoading) {
     return <Loading />;
   }
