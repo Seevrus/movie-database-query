@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieCard should render correctly 1`] = `
+<div
+  className="card"
+  style={
+    Object {
+      "maxWidth": "1280px",
+    }
+  }
+>
+  <div
+    className="row g-0"
+  >
+    <div
+      className="col-md-3"
+    >
+      <img
+        alt="Poster of Swimming Pool"
+        className="img-fluid"
+        src="http://abc.de/w007/path/to/poster"
+      />
+    </div>
+    <div
+      className="col-md-9"
+    >
+      <div
+        className="card-body"
+      >
+        <h5
+          className="card-title"
+        >
+          Swimming Pool
+        </h5>
+        <p
+          className="card-text"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ultricies molestie massa, sit amet mattis libero aliquet in. Proin id nunc nec sapien feugiat aliquam a sed erat. Suspendisse cursus nulla et felis varius rutrum. Aliquam tincidunt risus eget rhoncus dapibus. Donec a augue pellentesque, ultrices dolor quis, pulvinar ligula. Nunc dictum, dui in congue molestie, mi justo laoreet tortor, eget interdum lectus urna et mauris. In fringilla quam sem, ut posuere nisl luctus id.
+        </p>
+        <p
+          className="card-text"
+        >
+          <small
+            className="text-muted"
+          >
+            2027-07-07
+          </small>
+        </p>
+        <button
+          className="btn btn-light"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Kedvencek közé
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MovieCard should render correctly if the movie is a favorite 1`] = `
+<div
+  className="card"
+  style={
+    Object {
+      "maxWidth": "1280px",
+    }
+  }
+>
+  <div
+    className="row g-0"
+  >
+    <div
+      className="col-md-3"
+    >
+      <img
+        alt="Poster of Swimming Pool"
+        className="img-fluid"
+        src="http://abc.de/w007/path/to/poster"
+      />
+    </div>
+    <div
+      className="col-md-9"
+    >
+      <div
+        className="card-body"
+      >
+        <h5
+          className="card-title"
+        >
+          Swimming Pool
+        </h5>
+        <p
+          className="card-text"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ultricies molestie massa, sit amet mattis libero aliquet in. Proin id nunc nec sapien feugiat aliquam a sed erat. Suspendisse cursus nulla et felis varius rutrum. Aliquam tincidunt risus eget rhoncus dapibus. Donec a augue pellentesque, ultrices dolor quis, pulvinar ligula. Nunc dictum, dui in congue molestie, mi justo laoreet tortor, eget interdum lectus urna et mauris. In fringilla quam sem, ut posuere nisl luctus id.
+        </p>
+        <p
+          className="card-text"
+        >
+          <small
+            className="text-muted"
+          >
+            2027-07-07
+          </small>
+        </p>
+        <button
+          className="btn btn-primary"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Eltávolítás a kedvencek közül
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

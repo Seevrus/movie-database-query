@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Alert, Card, Col, Container, Form, Row } from 'react-bootstrap';
+import { Card, Col, Container, Form, Row } from 'react-bootstrap';
 import { MovieService } from '../../model/MovieService';
 import { MoviePagesT } from '../../types/movie-pages';
 import debounce from '../../utils/debounce';
@@ -21,11 +21,6 @@ const SearchForm = ({
   setActivePage,
   setNumberOfPages,
 }: SearchFormProps) => {
-  const feedback = false;
-  const isFormValidated = false;
-  const queryError = '';
-  const searchError = '';
-
   const MIN_QUERY_LENGTH = 3;
   const [queryText, setQueryText] = useState<string>('');
 
@@ -67,28 +62,21 @@ const SearchForm = ({
               <Card.Title as="h4">Film keresése</Card.Title>
             </Card.Header>
             <Card.Body>
-              <Form noValidate validated={isFormValidated}>
+              <Form noValidate>
                 <Row>
                   <Col md="12">
                     <Form.Group controlId="movie-query-field">
                       <Form.Label>Keresett film:</Form.Label>
                       <Form.Control
-                        isInvalid={!!queryError}
                         onChange={onQueryChange}
                         required
                         value={queryText}
                         placeholder="Minimum három karakter..."
                       />
-                      {feedback && (
-                        <Form.Control.Feedback type="invalid">
-                          {queryError}
-                        </Form.Control.Feedback>
-                      )}
                     </Form.Group>
                   </Col>
                 </Row>
               </Form>
-              {searchError && <Alert variant="danger">{searchError}</Alert>}
             </Card.Body>
           </Card>
         </Col>

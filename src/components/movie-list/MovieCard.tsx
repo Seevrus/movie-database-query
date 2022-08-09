@@ -20,7 +20,7 @@ interface MovieCardProps {
 
 export const MovieCard = ({ movie }: MovieCardProps) => {
   const { configuration, favoriteMovies, setFavoriteMovies } = useContext(MovieListContext);
-  const hasImage = !!configuration.size;
+  const hasImage = !!configuration.size && !!movie.posterPath;
   const imgUrl = hasImage
     ? configuration.baseUrl + '/' + configuration.size + '/' + movie.posterPath
     : '';

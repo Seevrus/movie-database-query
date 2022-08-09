@@ -1,0 +1,161 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResultsPagination Should render correctly 1`] = `
+<div
+  className="container-fluid"
+>
+  <div
+    className="justify-content-md-center row"
+  >
+    <div
+      className="col-md-8"
+    >
+      <div
+        className="login card"
+      >
+        <div
+          className="card-header"
+        >
+          <h4
+            className="card-title"
+          >
+            Kedvencek
+          </h4>
+        </div>
+        <div
+          className="card-body"
+        >
+          <button
+            className="btn btn-light"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            Reality Bites
+          </button>
+          <button
+            className="btn btn-light"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            Demolition Man
+          </button>
+          <button
+            className="btn btn-light"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            Kramer vs. Kramer
+          </button>
+          <button
+            className="btn btn-light"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            The Christmas Chronicles: Part Two
+          </button>
+          <button
+            className="btn btn-light"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            The Ides of March
+          </button>
+          <button
+            className="btn btn-light"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            The Princess Switch 3: Romancing the Star
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ResultsPagination Should render correctly if there is a focused movie 1`] = `
+<div
+  className="container-fluid"
+>
+  <div
+    className="justify-content-md-center row"
+  >
+    <div
+      className="col-md-8"
+    >
+      <div
+        className="login card"
+      >
+        <div
+          className="card-header"
+        >
+          <h4
+            className="card-title"
+          >
+            Kedvencek
+          </h4>
+        </div>
+        <div
+          className="card-body"
+        >
+          <button
+            className="btn btn-primary"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            Reality Bites
+          </button>
+          <button
+            className="btn btn-light"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            Demolition Man
+          </button>
+          <button
+            className="btn btn-light"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            Kramer vs. Kramer
+          </button>
+          <button
+            className="btn btn-light"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            The Christmas Chronicles: Part Two
+          </button>
+          <button
+            className="btn btn-light"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            The Ides of March
+          </button>
+          <button
+            className="btn btn-light"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            The Princess Switch 3: Romancing the Star
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

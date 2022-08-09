@@ -32,7 +32,7 @@ const ResultsPagination = ({
             <Pagination.Prev
               onClick={() => activePage - 1 > 0 && setActivePage(activePage - 1)}
             />
-            {activePage > 2 && 
+            {activePage > 2 && firstNumber > 1 && 
               <>
                 <Pagination.Item onClick={() => setActivePage(1)}>{1}</Pagination.Item>
                 <Pagination.Ellipsis />
@@ -51,7 +51,7 @@ const ResultsPagination = ({
               ),
             )}
 
-            {activePage < numberOfPages - 1 && 
+            {activePage < numberOfPages - 1 && lastNumber < numberOfPages &&
               <>
                 <Pagination.Ellipsis />
                 <Pagination.Item 

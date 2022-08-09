@@ -1,0 +1,343 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieList should render correctly 1`] = `
+<div
+  className="container-fluid"
+>
+  <div
+    className="justify-content-lg-center row"
+  >
+    <div
+      className="card"
+      style={
+        Object {
+          "maxWidth": "1280px",
+        }
+      }
+    >
+      <div
+        className="row g-0"
+      >
+        <div
+          className="col-md-3"
+        >
+          <img
+            alt="Poster of Reality Bites"
+            className="img-fluid"
+            src=""
+          />
+        </div>
+        <div
+          className="col-md-9"
+        >
+          <div
+            className="card-body"
+          >
+            <h5
+              className="card-title"
+            >
+              Reality Bites
+            </h5>
+            <p
+              className="card-text"
+            />
+            <p
+              className="card-text"
+            >
+              <small
+                className="text-muted"
+              />
+            </p>
+            <button
+              className="btn btn-light"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Kedvencek közé
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="card"
+      style={
+        Object {
+          "maxWidth": "1280px",
+        }
+      }
+    >
+      <div
+        className="row g-0"
+      >
+        <div
+          className="col-md-3"
+        >
+          <img
+            alt="Poster of Demolition Man"
+            className="img-fluid"
+            src=""
+          />
+        </div>
+        <div
+          className="col-md-9"
+        >
+          <div
+            className="card-body"
+          >
+            <h5
+              className="card-title"
+            >
+              Demolition Man
+            </h5>
+            <p
+              className="card-text"
+            />
+            <p
+              className="card-text"
+            >
+              <small
+                className="text-muted"
+              />
+            </p>
+            <button
+              className="btn btn-light"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Kedvencek közé
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="card"
+      style={
+        Object {
+          "maxWidth": "1280px",
+        }
+      }
+    >
+      <div
+        className="row g-0"
+      >
+        <div
+          className="col-md-3"
+        >
+          <img
+            alt="Poster of Kramer vs. Kramer"
+            className="img-fluid"
+            src=""
+          />
+        </div>
+        <div
+          className="col-md-9"
+        >
+          <div
+            className="card-body"
+          >
+            <h5
+              className="card-title"
+            >
+              Kramer vs. Kramer
+            </h5>
+            <p
+              className="card-text"
+            />
+            <p
+              className="card-text"
+            >
+              <small
+                className="text-muted"
+              />
+            </p>
+            <button
+              className="btn btn-light"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Kedvencek közé
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="card"
+      style={
+        Object {
+          "maxWidth": "1280px",
+        }
+      }
+    >
+      <div
+        className="row g-0"
+      >
+        <div
+          className="col-md-3"
+        >
+          <img
+            alt="Poster of The Christmas Chronicles: Part Two"
+            className="img-fluid"
+            src=""
+          />
+        </div>
+        <div
+          className="col-md-9"
+        >
+          <div
+            className="card-body"
+          >
+            <h5
+              className="card-title"
+            >
+              The Christmas Chronicles: Part Two
+            </h5>
+            <p
+              className="card-text"
+            />
+            <p
+              className="card-text"
+            >
+              <small
+                className="text-muted"
+              />
+            </p>
+            <button
+              className="btn btn-light"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Kedvencek közé
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="card"
+      style={
+        Object {
+          "maxWidth": "1280px",
+        }
+      }
+    >
+      <div
+        className="row g-0"
+      >
+        <div
+          className="col-md-3"
+        >
+          <img
+            alt="Poster of The Ides of March"
+            className="img-fluid"
+            src=""
+          />
+        </div>
+        <div
+          className="col-md-9"
+        >
+          <div
+            className="card-body"
+          >
+            <h5
+              className="card-title"
+            >
+              The Ides of March
+            </h5>
+            <p
+              className="card-text"
+            />
+            <p
+              className="card-text"
+            >
+              <small
+                className="text-muted"
+              />
+            </p>
+            <button
+              className="btn btn-light"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Kedvencek közé
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="card"
+      style={
+        Object {
+          "maxWidth": "1280px",
+        }
+      }
+    >
+      <div
+        className="row g-0"
+      >
+        <div
+          className="col-md-3"
+        >
+          <img
+            alt="Poster of The Princess Switch 3: Romancing the Star"
+            className="img-fluid"
+            src=""
+          />
+        </div>
+        <div
+          className="col-md-9"
+        >
+          <div
+            className="card-body"
+          >
+            <h5
+              className="card-title"
+            >
+              The Princess Switch 3: Romancing the Star
+            </h5>
+            <p
+              className="card-text"
+            />
+            <p
+              className="card-text"
+            >
+              <small
+                className="text-muted"
+              />
+            </p>
+            <button
+              className="btn btn-light"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Kedvencek közé
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MovieList should render correctly if results are loading 1`] = `
+<div
+  className="d-flex justify-content-center spinner-container container"
+>
+  <div
+    className="spinner-border text-secondary"
+    role="status"
+  />
+</div>
+`;
+
+exports[`MovieList should render correctly if there are no movies 1`] = `null`;

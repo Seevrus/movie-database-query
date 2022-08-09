@@ -3,7 +3,7 @@ import { Movie } from '../../model/Movie';
 
 interface FavoriteMovieProps {
   favoriteMovies: Movie[];
-  focusedMovie: Movie | undefined;
+  focusedMovie?: Movie | undefined;
   setFocusedMovie: React.Dispatch<React.SetStateAction<Movie | undefined>>;
 }
 
