@@ -1,0 +1,55 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/bgFqunCTW2gt7XLOqJ1i.jpg",
+      "genre_ids": [1, 2, 3],
+      "id": 1,
+      "original_language": "en",
+      "original_title": "Title 1",
+      "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique gravida odio eget auctor. Ut tristique urna nec ullamcorper gravida. Sed blandit pellentesque dui et consequat. Pellentesque euismod egestas tristique. Curabitur vitae tortor aliquam, imperdiet augue sed, iaculis elit. Praesent sagittis blandit lorem, vel finibus neque hendrerit vitae. Sed rutrum commodo vulputate. Suspendisse sollicitudin risus eu augue fringilla, eget condimentum leo pulvinar. Etiam eget tincidunt ex. In justo eros, semper a massa ac, ultricies bibendum velit.",
+      "popularity": 76.525,
+      "poster_path": "/hT10iTvA2DxcMZdoL2iN.jpg",
+      "release_date": "2022-08-10",
+      "title": "Title 4",
+      "video": false,
+      "vote_average": 5.2,
+      "vote_count": 17541
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/PUBAFu2iIcGXZDTIKHm0.jpg",
+      "genre_ids": [4, 5, 6],
+      "id": 2,
+      "original_language": "en",
+      "original_title": "Title 2",
+      "overview": "Nullam maximus sapien sed odio aliquet aliquet. Nam sollicitudin rutrum eleifend. Praesent et luctus ante, a tristique nulla. Fusce eros diam, maximus nec risus quis, consectetur suscipit lacus. Maecenas placerat libero metus, sed suscipit nunc bibendum sagittis. Morbi mattis, eros vel rutrum mollis, augue urna tristique ipsum, sed eleifend neque metus non diam. Integer lectus nulla, facilisis a pharetra eget, ornare ac neque. ",
+      "popularity": 76.525,
+      "poster_path": "/HJaa6JTTE7yEOGrx10kJ.jpg",
+      "release_date": "2022-08-11",
+      "title": "Title 5",
+      "video": false,
+      "vote_average": 9.3,
+      "vote_count": 17541
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/DrvKZBaeli2RDkYeQsFZ.jpg",
+      "genre_ids": [7, 8, 9],
+      "id": 3,
+      "original_language": "en",
+      "original_title": "Title 6",
+      "overview": "Duis nec luctus quam. In a eros quis ante commodo rhoncus eu id lacus. Aliquam id enim convallis, luctus risus vel, rhoncus eros. Morbi pharetra erat purus. Ut maximus velit quis tellus vulputate posuere. Donec in elit neque. Nullam vitae accumsan lectus, vel aliquet dui. Phasellus pulvinar tincidunt nisi non blandit. Phasellus ultricies lorem vel felis blandit commodo.",
+      "popularity": 76.525,
+      "poster_path": "/WqFUJ47D94LtZqQQ7Kfw.jpg",
+      "release_date": "2022-08-12",
+      "title": "Title 3",
+      "video": false,
+      "vote_average": 6.7,
+      "vote_count": 17541
+    }
+  ],
+  "total_pages": 1,
+  "total_results": 3
+}

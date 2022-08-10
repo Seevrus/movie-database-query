@@ -15,11 +15,11 @@ export class Movie {
 
   overview?: string;
 
-  popularity?: string;
+  popularity?: number;
 
   voteAverage?: number;
 
-  voteCount?: string;
+  voteCount?: number;
 
   releaseDate?: string;
 
