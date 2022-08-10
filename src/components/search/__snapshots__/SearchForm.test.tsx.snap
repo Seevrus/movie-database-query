@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchForm should render correctly 1`] = `
+<div
+  className="container-fluid"
+>
+  <div
+    className="justify-content-md-center row"
+  >
+    <div
+      className="col-md-8"
+    >
+      <div
+        className="login card"
+      >
+        <div
+          className="card-header"
+        >
+          <h4
+            className="card-title"
+          >
+            Film keresése
+          </h4>
+        </div>
+        <div
+          className="card-body"
+        >
+          <form
+            className=""
+            noValidate={true}
+          >
+            <div
+              className="row"
+            >
+              <div
+                className="col-md-12"
+              >
+                <div>
+                  <label
+                    className="form-label"
+                    htmlFor="movie-query-field"
+                  >
+                    Keresett film:
+                  </label>
+                  <input
+                    className="form-control"
+                    id="movie-query-field"
+                    onChange={[Function]}
+                    placeholder="Minimum három karakter..."
+                    required={true}
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
